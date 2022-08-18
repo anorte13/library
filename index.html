@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="library-logic.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Library App</title>
+</head>
+<body>
+    <h1>library</h1>
+    <button onclick="inputForm()">NEW BOOK +</button>
+
+    <form action="" method="get" id="bookform">
+
+        <label for="booktitle">Book Title: </label>
+        <input type="text" name="booktitle" id="booktitle">
+
+        <label for="authorname">Author's Name:</label>
+        <input type="text" name="authorname" id="authorname">
+
+        <label for="pages">Number of Pages:</label>
+        <input type="text" name="pages" id="pages">
+
+        <input type="button" value="Submit" onclick="addBookToLibrary()">
+    </form>
+</body>
+</html>
