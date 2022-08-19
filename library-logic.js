@@ -1,3 +1,8 @@
+const form = document.getElementById('bookform');
+const title = form.elements['booktitle'];
+const author = form.elements['authorname'];
+const pages = form.elements['pages'];
+
 
 let myLibrary = [];
 console.log(myLibrary);
@@ -8,8 +13,12 @@ function Book (title, author, pages) {
     this.pages = pages;
 }
 
+Book.prototype.bookInfo = function () {
+    let bookData = this.title + ' by ' + this.author + ', ' + this.pages + ' pages';
+    console.log(bookData);
+}
 function inputForm() {
-    const form = document.getElementById('bookform');
+
     if(form.style.display === 'block') {
         form.style.display = "none";
     } else {
@@ -17,10 +26,11 @@ function inputForm() {
     }
 }
 function addBookToLibrary() {
-    const books = document.getElementById('booktitle');
-    const authors = document.getElementById('authorname');
-    const page = document.getElementById('pages');
+    let bookTitle = title.value;
+    let authorName = author.value;
+    let numberPages = pages.value;
 
-    const myBook = new Book(books, authors, page);
+    const myBook = new Book(bookTitle, authorName, numberPages);
     myLibrary.push(myBook);
+    myBook.bookInfo();
 }
