@@ -9,24 +9,57 @@
     <title>Library App</title>
 </head>
 <body>
-    <h1>library</h1>
-    <button onclick="inputForm()">NEW BOOK +</button>
+    <div class="title">
+        <h1>library</h1>
+    </div>
+    <div class="input-button">
+        <button onclick="inputForm()">ADD NEW BOOK(S)</button>
+    </div>
+ <div class="form-container">
+        <form action="" method="get" id="bookform">
+            <div class="form-fields">
+                <div>
+                    <h3 id="demo">Enter your books information below:</h3>
+                </div>
+                <div>
+                    <label for="booktitle">Book Title: </label>
+                </div>
+                <div>
+                    <input type="text" name="booktitle" id="booktitle">
+                </div>
+                <div>
+                    <label for="authorname">Author's Name:</label>
+                </div>
+                <div>
+                    <input type="text" name="authorname" id="authorname">
+                </div>
+                <div>
+                    <label for="pages">Number of Pages:</label>
+                </div>
+                <div>
+                    <input type="text" name="pages" id="pages">
+                </div>
+                <div class="button-choices-container">
+                    <div>
+                        <label for="status">Have you read this book?:</label>
+                        <input type="radio" name="status" value="Read" id="status">
+                    </div>
+                        
+                  </div>
+                </div>
+                <input type="button" value="Submit" onclick="addBookToLibrary(), clearForm()">
+            </div>
+        </form>
+    </div>
+    <div>
+        <p id="error"></p>
+    </div>
+    
+    <div id="container">
+        <div id="book-container">
+        </div>
+    </div>
 
-    <form action="" method="get" id="bookform">
-
-        <label for="booktitle">Book Title: </label>
-        <input type="text" name="booktitle" id="booktitle">
-
-        <label for="authorname">Author's Name:</label>
-        <input type="text" name="authorname" id="authorname">
-
-        <label for="pages">Number of Pages:</label>
-        <input type="text" name="pages" id="pages">
-
-        <input type="button" value="Submit" onclick="addBookToLibrary()">
-    </form>
-    <button id="showLibrary" onclick="showLibrary()">Show Library</button>
-
-    <p id="demo"></p>
+   
 </body>
 </html>
