@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="library-logic.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <title>Library App</title>
 </head>
 <body>
     <div class="title">
-        <h1>library</h1>
+        <div class="header">
+            <h1>library</h1>
+        </div>
     </div>
     <div class="input-button">
         <button onclick="inputForm()">ADD NEW BOOK +</button>
@@ -22,36 +27,32 @@
                 <div>
                     <h3 id="demo">Enter your books information below:</h3>
                 </div>
-                <div>
+                <div class="book-form">
                     <label for="booktitle">Book Title: </label>
                 </div>
-                <div>
+                <div class="form-inputs">
                     <input type="text" name="booktitle" id="booktitle">
                 </div>
-                <div>
+                <div class="book-form">
                     <label for="authorname">Author's Name:</label>
                 </div>
-                <div>
+                <div class="form-inputs">
                     <input type="text" name="authorname" id="authorname">
                 </div>
-                <div>
+                <div class="book-form">
                     <label for="pages">Number of Pages:</label>
                 </div>
-                <div>
+                <div class="form-inputs">
                     <input type="text" name="pages" id="pages">
                 </div>
                 <div class="button-choices-container">
-                    <div>
-                        <label for="status">Have you read this book?:</label>
-                        <input type="radio" name="status" value="Read" id="status">
-                    </div>
-                  </div>
+                    <label for="status">Have you read this book?:</label>
+                    <input type="radio" name="status" value="Read" id="status">
                 </div>
-                <input type="button" value="Submit" onclick="addBookToLibrary(), clearForm()">
+                <input type="button" value="Submit" id="submit" onclick="addBookToLibrary(), clearForm()">
+                </div>
             </div>
-        </form>
-    </div>
-    
+        </form>    
     <div id="container">
         <div id="book-container"></div>
     </div>

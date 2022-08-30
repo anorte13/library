@@ -1,7 +1,7 @@
 body {
     word-wrap: break-word;
     height: 100%;
-
+    font-family: 'Inter', sans-serif;
 }
 *, *::before *::after {
     box-sizing: border-box;
@@ -9,10 +9,25 @@ body {
     margin: 0;
 }
 .title {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
     background-color: black;
     color: white;
+    height: 7rem;
+    font-weight: bolder;
+    font-size: 30px;
+    margin: 0px;
+}
+.header {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+h1 {
+    margin: 0px;
 }
 .input-button {
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -25,6 +40,7 @@ body {
     width: 12em;
     text-align: center;
     font-weight: bold;
+    font-size: 18px;
 }
 button:hover {
     background-color: rgb(219, 212, 212);
@@ -32,24 +48,55 @@ button:hover {
 #bookform {
     display: none;
 }
+.form-container {
+    margin-bottom: 20px;
+}
 .form-fields {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     gap: 10px;
 }
+.book-form {
+    font-size: 20px;
+}
+.form-inputs > input {
+    background-color:  rgb(241, 235, 235);
+    border: 0.5px solid rgb(26, 25, 25);
+    height: 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 20px;
+}
+
+.button-choices-container > label {
+    font-size: 20px;
+}
+#submit {
+    color: blue;
+    border-radius: 1rem;
+    border: none;
+    height: 2em;
+    width: 12em;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+#submit:hover {
+    background-color: rgb(219, 212, 212);
+}
 #container {
-    background-color: rgb(211, 210, 210);
-    height: max-content;
+   
 }
 #book-container {
     display: flex;
     flex-wrap: wrap;
     flex: 1;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    align-content: flex-start;
     gap: 30px;
+    height: 100%;
+    background-color: rgb(225, 224, 224);
 }
 .book-card {
     text-align: center;
@@ -59,17 +106,19 @@ button:hover {
     font-size: 20px;
     gap: 20px;
     padding: 20px;
+    margin: 35px;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.17) 2px 1px 4px;
     line-height: 1.2;
     width: 12em;
-    height: 12em;
+    height: 14em;
     background-color: white;
 }
 .book-title {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     text-overflow: ellipsis;
+    font-style: italic;
 }
 .author-title, .number-pages, .read-status {
     font-size: 18px;
@@ -80,16 +129,18 @@ button:hover {
     border-radius: 10px;
     border: none;
     color: white;
+    font-size: 18px;
     height: 2em;
-    width: 3rem;
+    width: 5rem;
 }
 .button-not-read {
     background-color: rgb(220, 77, 77);
     border-radius: 10px;
     border: none;
     color: white;
-    height: 2em;
+    height: 2.5em;
     width: 5rem;
+    font-size: 18px;
 }
 .button-read:hover {
     background-color: rgb(53, 194, 53);
