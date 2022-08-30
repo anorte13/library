@@ -13,7 +13,8 @@
         <h1>library</h1>
     </div>
     <div class="input-button">
-        <button onclick="inputForm()">ADD NEW BOOK(S)</button>
+        <button onclick="inputForm()">ADD NEW BOOK +</button>
+        <p id="error"></p>
     </div>
  <div class="form-container">
         <form action="" method="get" id="bookform">
@@ -44,20 +45,15 @@
                         <label for="status">Have you read this book?:</label>
                         <input type="radio" name="status" value="Read" id="status">
                     </div>
-                        
                   </div>
                 </div>
                 <input type="button" value="Submit" onclick="addBookToLibrary(), clearForm()">
             </div>
         </form>
     </div>
-    <div>
-        <p id="error"></p>
-    </div>
     
     <div id="container">
-        <div id="book-container">
-        </div>
+        <div id="book-container"></div>
     </div>
 
    

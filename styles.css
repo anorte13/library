@@ -1,3 +1,13 @@
+body {
+    word-wrap: break-word;
+    height: 100%;
+
+}
+*, *::before *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 .title {
     background-color: black;
     color: white;
@@ -28,49 +38,62 @@ button:hover {
     align-items: center;
     gap: 10px;
 }
-#book-cards {
-    height: 20em;
-    width: 15em;
-
-    color: red;
-    border-radius: 1em;
-    margin: 20px;
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
 #container {
-    border: 1px solid black;
+    background-color: rgb(211, 210, 210);
+    height: max-content;
 }
 #book-container {
-    border-radius: 1em;
-    flex-wrap: wrap;
     display: flex;
+    flex-wrap: wrap;
     flex: 1;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 30px;
 }
-.button-choices-container {
+.book-card {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
+    font-size: 20px;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.17) 2px 1px 4px;
+    line-height: 1.2;
+    width: 12em;
+    height: 12em;
+    background-color: white;
 }
-.button-choices {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
+.book-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-overflow: ellipsis;
 }
-.button-choice {
+.author-title, .number-pages, .read-status {
+    font-size: 18px;
+    text-overflow: ellipsis;
+}
+.button-read {
+    background-color: rgb(107, 188, 107);
     border-radius: 10px;
     border: none;
-    padding: 1em;
-    width: 6rem;
-    font-weight: bold;
-    font-size: 15px;
+    color: white;
+    height: 2em;
+    width: 3rem;
 }
-.button-choice:hover {
-    background-color: rgb(219, 212, 212);
-    
+.button-not-read {
+    background-color: rgb(220, 77, 77);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    height: 2em;
+    width: 5rem;
+}
+.button-read:hover {
+    background-color: rgb(53, 194, 53);
+}
+.button-not-read:hover {
+    background-color: rgb(219, 49, 49);
 }

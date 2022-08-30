@@ -1,13 +1,11 @@
 const form = document.getElementById('bookform');
 let error = document.getElementById('error');
 
-
 const title = form.elements['booktitle'];
 const author = form.elements['authorname'];
 const pages = form.elements['pages'];
 const read = form.elements['status']
-
-
+const container = document.getElementById('book-container');
 
 let bookTitle;
 let authorName;
@@ -15,6 +13,11 @@ let numberPages;
 let readStatus;
 let myLibrary = [];
 let bookInfo;
+
+let bookInfotitle;
+let bookInfoauthor;
+let bookInfopages;
+let bookInforead;
 
 function Book (title, author, pages, read) {
     this.title = title;
@@ -44,6 +47,8 @@ function addBookToLibrary() {
     myLibrary.push(myBook);
     bookAdded();
     showLibrary();
+
+    console.log(myLibrary)
 }
 
 function bookAdded() {
@@ -52,15 +57,59 @@ function bookAdded() {
     msg.style.color = 'green';
 }
 function showLibrary() {
-    if(myLibrary.length === 0) {
-        error.textContent = 'There are no books in library, please add some';
+    const newDiv = document.createElement('div');
+    const newTitleDiv = document.createElement('div');
+    const newAuthorDiv = document.createElement('div');
+    const newPagesDiv = document.createElement('div');
+    const newReadStatus = document.createElement('div');
+
+    if (myLibrary.length === 0) {
+        error.innerHTML = 'There are no books in library, please add some';
     }
     else {
+        error.innerHTML = '';
         for (let i = 0; i < myLibrary.length; i++) {
-            error.textContent = myLibrary[i].title + ' by ' + myLibrary[i].author + ', ' + myLibrary[i].pages + ' pages ' + myLibrary[i].read;
+            
+            newDiv.classList = 'book-card';
+            newTitleDiv.classList = 'book-title';
+            newAuthorDiv.classList = 'author-title';
+            newPagesDiv.classList = 'number-pages';
+            newReadStatus.classList = 'read-status';
+
+            bookInfotitle = myLibrary[i].title;
+            bookInfoauthor = myLibrary[i].author;
+            bookInfopages = myLibrary[i].pages;
+            bookInforead = myLibrary[i].read;
+            
+            createBookCards(newDiv, newTitleDiv, newAuthorDiv, newPagesDiv, newReadStatus);
+            container.appendChild(newDiv);
         }
+        addBookInfo(bookInfotitle, bookInfoauthor, bookInfopages, bookInforead, newTitleDiv, newAuthorDiv, newPagesDiv, newReadStatus);
     }
 }
 function clearForm() {
     form.reset();
+}
+function createBookCards(div, title, author, pages, read) {
+    div.appendChild(title);
+    div.appendChild(title);
+    div.appendChild(author);
+    div.appendChild(pages);
+    div.appendChild(read);
+}
+function addBookInfo(title, author, pages, read, div, div2, div3, div4) {
+    const btn = document.createElement('button');
+    btn.textContent = read;
+    if(btn.textContent === 'Read') {
+        btn.classList = 'button-read';
+    }
+    else {
+        btn.classList = 'button-not-read';
+    }
+
+    div.innerHTML =  title;
+    div2.innerHTML = 'Author: ' + author;
+    div3.innerHTML = 'Pages: ' + pages;
+    div4.appendChild(btn);
+
 }
