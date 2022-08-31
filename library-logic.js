@@ -47,8 +47,6 @@ function addBookToLibrary() {
     myLibrary.push(myBook);
     bookAdded();
     showLibrary();
-
-    console.log(myLibrary)
 }
 
 function bookAdded() {
@@ -69,7 +67,7 @@ function showLibrary() {
     else {
         error.innerHTML = '';
         for (let i = 0; i < myLibrary.length; i++) {
-            
+            newDiv.id = 'book' + i;
             newDiv.classList = 'book-card';
             newTitleDiv.classList = 'book-title';
             newAuthorDiv.classList = 'author-title';
@@ -84,7 +82,7 @@ function showLibrary() {
             createBookCards(newDiv, newTitleDiv, newAuthorDiv, newPagesDiv, newReadStatus);
             container.appendChild(newDiv);
         }
-        addBookInfo(bookInfotitle, bookInfoauthor, bookInfopages, bookInforead, newTitleDiv, newAuthorDiv, newPagesDiv, newReadStatus);
+        addBookInfo(bookInfotitle, bookInfoauthor, bookInfopages, bookInforead, newTitleDiv, newAuthorDiv, newPagesDiv, newReadStatus, newDiv);
     }
 }
 function clearForm() {
@@ -97,19 +95,37 @@ function createBookCards(div, title, author, pages, read) {
     div.appendChild(pages);
     div.appendChild(read);
 }
-function addBookInfo(title, author, pages, read, div, div2, div3, div4) {
+function addBookInfo(title, author, pages, read, div, div2, div3, div4, div5) {
     const btn = document.createElement('button');
+    const btn2 = document.createElement('button');
+    btn2.classList = 'button-delete'
     btn.textContent = read;
+    btn2.textContent = 'Remove'
+
     if(btn.textContent === 'Read') {
         btn.classList = 'button-read';
     }
     else {
         btn.classList = 'button-not-read';
     }
-
     div.innerHTML =  title;
     div2.innerHTML = 'Author: ' + author;
     div3.innerHTML = 'Pages: ' + pages;
     div4.appendChild(btn);
+    div4.appendChild(btn2);
 
+    btn.addEventListener('click', function(e){
+        if(btn.textContent === 'Read'){
+            btn.classList = 'button-not-read';
+            btn.textContent = 'Not Read';
+        }
+        else if (btn.textContent === 'Not Read') {
+            btn.classList = 'button-read';
+            btn.textContent = 'Read'
+        }
+    });
+    btn2.addEventListener('click', function(e){
+        const element  = document.getElementById(`${div5.id}`);
+        element.remove();
+    })
 }

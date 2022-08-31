@@ -124,6 +124,12 @@ button:hover {
     font-size: 18px;
     text-overflow: ellipsis;
 }
+.read-status {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
 .button-read {
     background-color: rgb(107, 188, 107);
     border-radius: 10px;
@@ -147,4 +153,14 @@ button:hover {
 }
 .button-not-read:hover {
     background-color: rgb(219, 49, 49);
+}
+.button-delete {
+    background-color: rgb(220, 77, 77);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    height: 2em;
+    width: 4.5rem;
+    font-size: 15px;
+    font-weight: bold;
 }
